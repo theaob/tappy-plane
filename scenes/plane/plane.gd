@@ -21,7 +21,9 @@ func fly(delta) -> void:
 		animation_player.play("power")
 		
 func die() -> void:
-	print("DEAD")
+	print("PLANE DIED")
 
 	set_physics_process(false)
 	animated_sprite_2d.stop()
+	
+	SignalManager.on_plane_died.emit()
