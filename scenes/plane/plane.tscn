@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs28tivo51jkw"]
+
+[ext_resource type="Texture2D" uid="uid://b4blmeitsg8pu" path="res://assets/plane/planes_sheet.png" id="1_gfps6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ajk5"]
+radius = 24.7386
+
+[node name="Plane" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_gfps6")
+region_enabled = true
+region_rect = Rect2(0, 0, 87, 73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8ajk5")
