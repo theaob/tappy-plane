@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnn5lwuvsq3a1"]
+[gd_scene load_steps=8 format=3 uid="uid://bnn5lwuvsq3a1"]
 
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_0gf58"]
 [ext_resource type="Texture2D" uid="uid://dyw44eexvqv2o" path="res://assets/background/sky.png" id="1_016hx"]
 [ext_resource type="LabelSettings" uid="uid://btv6t2m3qc1fy" path="res://assets/lg_red_72.tres" id="1_agu18"]
 [ext_resource type="LabelSettings" uid="uid://un3ntqpdw6k6" path="res://assets/lg_red_32.tres" id="2_0coth"]
@@ -34,6 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0gf58")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
