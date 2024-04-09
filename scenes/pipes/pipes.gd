@@ -19,4 +19,4 @@ func _on_pipe_body_entered(body: Node2D):
 
 func _on_laser_body_exited(body):
 	if body.is_in_group(GameManager.GROUP_PLAYER):
-		pass
+		ScoreManager.increment_score()

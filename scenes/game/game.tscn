@@ -1,17 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5ifh6owvyiu3"]
+[gd_scene load_steps=7 format=3 uid="uid://c5ifh6owvyiu3"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_17be5"]
 [ext_resource type="Texture2D" uid="uid://dqhjp13j6e63l" path="res://assets/background/rocks_2.png" id="1_deqwm"]
 [ext_resource type="PackedScene" uid="uid://bs28tivo51jkw" path="res://scenes/plane/plane.tscn" id="2_uitj2"]
 [ext_resource type="PackedScene" uid="uid://d20k2q0mskue" path="res://scenes/barrier/barrier.tscn" id="3_mro4i"]
 [ext_resource type="PackedScene" uid="uid://idthkbgkarq3" path="res://scenes/pipes/pipes.tscn" id="4_45y05"]
+[ext_resource type="PackedScene" uid="uid://3v5pku1evw5r" path="res://scenes/hud/hud.tscn" id="6_disp7"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_17be5")
 pipes_scene = ExtResource("4_45y05")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("6_disp7")]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(245, 324)
+position = Vector2(416, 333)
 texture = ExtResource("1_deqwm")
 
 [node name="Plane" parent="." instance=ExtResource("2_uitj2")]
@@ -30,7 +35,7 @@ position = Vector2(540, 340)
 position = Vector2(540, 540)
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 1.2
+wait_time = 1.5
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
