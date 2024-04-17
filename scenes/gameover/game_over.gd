@@ -3,6 +3,7 @@ extends Control
 @onready var space_label = $SpaceLabel
 @onready var go_label = $GOLabel
 @onready var timer = $Timer
+@onready var game_over_sound = $GameOverSound
 
 func _ready():
 	hide()
@@ -15,6 +16,7 @@ func _process(_delta):
 
 func _on_plane_died():
 	show()
+	game_over_sound.play()
 	timer.start()
 
 func _on_timer_timeout():

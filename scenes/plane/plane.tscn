@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bs28tivo51jkw"]
+[gd_scene load_steps=12 format=3 uid="uid://bs28tivo51jkw"]
 
 [ext_resource type="Script" path="res://scenes/plane/plane.gd" id="1_1ww1r"]
 [ext_resource type="Texture2D" uid="uid://b4blmeitsg8pu" path="res://assets/plane/planes_sheet.png" id="1_gfps6"]
+[ext_resource type="AudioStream" uid="uid://cx1p323n4io76" path="res://assets/audio/engine.mp3" id="3_b6e8s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfgd1"]
 atlas = ExtResource("1_gfps6")
@@ -38,6 +39,21 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ajk5"]
 radius = 27.074
 
+[sub_resource type="Animation" id="Animation_ix6da"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_2nh3d"]
 resource_name = "power"
 length = 0.3
@@ -52,21 +68,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, -0.349066, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_ix6da"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qi8mp"]
@@ -92,3 +93,7 @@ shape = SubResource("CircleShape2D_8ajk5")
 libraries = {
 "": SubResource("AnimationLibrary_qi8mp")
 }
+
+[node name="EngineSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_b6e8s")
+autoplay = true
