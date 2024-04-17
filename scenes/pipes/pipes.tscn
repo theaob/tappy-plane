@@ -20,7 +20,7 @@ rotation = 3.14159
 position = Vector2(95.75, 0)
 scale = Vector2(0.825, 1)
 
-[connection signal="body_exited" from="Laser" to="." method="_on_laser_body_exited"]
+[connection signal="body_entered" from="Laser" to="." method="_on_laser_body_entered"]
 [connection signal="body_entered" from="Lower" to="." method="_on_pipe_body_entered"]
 [connection signal="body_entered" from="Upper" to="." method="_on_pipe_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

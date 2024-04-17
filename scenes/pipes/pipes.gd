@@ -17,6 +17,6 @@ func _on_pipe_body_entered(body: Node2D):
 		if body.has_method("die"):
 			body.die()
 
-func _on_laser_body_exited(body):
+func _on_laser_body_entered(body):	
 	if body.is_in_group(GameManager.GROUP_PLAYER):
 		ScoreManager.increment_score()
