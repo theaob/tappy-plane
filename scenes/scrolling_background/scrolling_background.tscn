@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckvmgccttiqcn"]
+
+[ext_resource type="Script" path="res://scenes/scrolling_background/scrolling_background.gd" id="1_7tyw7"]
+[ext_resource type="PackedScene" uid="uid://blne4b0bv56ph" path="res://scenes/scrolling_layer/scrolling_layer.tscn" id="2_7tiyi"]
+
+[node name="ScrollingBackground" type="ParallaxBackground"]
+script = ExtResource("1_7tyw7")
+
+[node name="ScrollingLayer" parent="." instance=ExtResource("2_7tiyi")]
